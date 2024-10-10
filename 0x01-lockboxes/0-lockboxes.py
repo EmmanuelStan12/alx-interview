@@ -1,19 +1,12 @@
 #!/usr/bin/python3
-from collections import deque
 """Calculates if all boxes in a given set can be opened"""
 
 
 def canUnlockAll(boxes):
     """
     Determines if all boxes can be unlocked.
-
-    Args:
-        boxes (list of list of keys): A list of boxes each containing keys
-
-    Returns:
-        bool: True if all boxes can be unlocked, otherwise False.
     """
-    queue = deque([0])
+    queue = [0]
     visited = {0}
     return traverse(boxes, queue, visited)
 
@@ -21,17 +14,9 @@ def canUnlockAll(boxes):
 def traverse(boxes, queue, visited):
     """
     Traverse the boxes using keys and a queue
-
-    Args:
-        boxes (list of list of int): A list of boxes, each containing keys.
-        queue (deque): A deque used to track the boxes to process.
-        visited (set): A set of boxes that have been visited.
-
-    Returns:
-        bool: True if all boxes can be unlocked, otherwise False.
     """
     while queue:
-        index = queue.popleft()
+        index = queue.pop(0)
         if index not in visited:
             visited.add(index)
 
