@@ -1,5 +1,7 @@
 #!/usr/bin/python3
 from collections import deque
+"""Calculates if all boxes in a given set can be opened"""
+
 
 def canUnlockAll(boxes):
     """
@@ -14,6 +16,7 @@ def canUnlockAll(boxes):
     queue = deque([0])
     visited = {0}
     return traverse(boxes, queue, visited)
+
 
 def traverse(boxes, queue, visited):
     """
@@ -40,4 +43,3 @@ def traverse(boxes, queue, visited):
             return True
 
     return len(boxes) == len(visited)
-
