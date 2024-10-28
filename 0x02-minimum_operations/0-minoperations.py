@@ -12,7 +12,6 @@ def minOperations(n: int) -> int:
     dp = [0] * (n + 1)
     for num in range(2, n + 1):
         dp[num] = num
-        
         for factor in range(1, num // 2 + 1):
             if num % factor == 0:
                 dp[num] = min(dp[num], dp[factor] + (num // factor))
