@@ -6,12 +6,14 @@ from typing import List
 
 def validUTF8(data: List[int]) -> bool:
     """
-    Validates a list of integers to check if they represent a valid UTF-8 encoding.
-    
-    Each integer is treated as a byte, and the function validates the encoding by
-    checking each byte pattern. A UTF-8 character may consist of 1 to 4 bytes.
-    
-    Returns True if data represents a valid UTF-8 encoding, else returns False.
+    Validates a list of integers to check
+    if they represent a valid UTF-8 encoding.
+    Each integer is treated as a byte,
+    and the function validates the encoding by
+    checking each byte pattern. A UTF-8
+    character may consist of 1 to 4 bytes.
+    Returns True if data represents a
+    valid UTF-8 encoding, else returns False.
     """
     remaining_bytes = 0
     for byte in data:
