@@ -17,7 +17,7 @@ def validUTF8(data: List[int]) -> bool:
     """
     remaining_bytes = 0
     for byte in data:
-        if byte > 255 or byte < 0:
+        if type(byte) is not int or byte > 0x10ffff or byte < 0:
             return False
         if remaining_bytes > 0:
             if (byte >> 6) != 0b10:
