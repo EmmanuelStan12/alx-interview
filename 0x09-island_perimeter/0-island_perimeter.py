@@ -6,7 +6,7 @@
 def island_perimeter(grid):
     """Find the perimeter of an island
     """
-    if type(grid) != list:
+    if type(grid) is not list:
         return 0
     total = 0
     for i in range(0, len(grid)):
@@ -26,9 +26,11 @@ def find_perimeter(row, col, grid):
     perimeter = 0
     rows = len(grid)
     cols = len(grid[row])
-    if row == 0 or (len(grid[row - 1]) > col and grid[row - 1][col] == 0):
+    if row == 0 or \
+            (len(grid[row - 1]) > col and grid[row - 1][col] == 0):
         perimeter += 1
-    if row == rows - 1 or (len(grid[row + 1]) > col and grid[row + 1][col] == 0):
+    if row == rows - 1 or \
+            (len(grid[row + 1]) > col and grid[row + 1][col] == 0):
         perimeter += 1
     if col == 0 or grid[row][col - 1] == 0:
         perimeter += 1
